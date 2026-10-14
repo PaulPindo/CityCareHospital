@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Care Hospital | Caring for Every Life</title>
+<style>
+:root{--navy:#12335b;--blue:#1677d2;--cyan:#e9f7ff;--ink:#19324d;--muted:#60748a;--white:#fff;--green:#19a78b;--line:#e1eaf2}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f8fbff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--navy);color:white;padding:9px 6%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+header{background:white;display:flex;align-items:center;justify-content:space-between;padding:17px 6%;gap:22px;position:sticky;top:0;z-index:5;box-shadow:0 4px 18px #173c5c0c}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px;color:var(--navy);white-space:nowrap}
+.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#1677d2,#27c3b2);color:white;display:grid;place-items:center;font-size:27px;font-weight:bold}
+nav{display:flex;gap:24px;align-items:center;flex-wrap:wrap;font-size:14px;font-weight:700;color:#41566c}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:white;border:0;padding:13px 19px;border-radius:11px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px #1677d226}
+.btn:hover{background:#0c5eae;transform:translateY(-1px)}
+.btn-outline{background:white;color:var(--blue);border:1px solid #c9e4fa;box-shadow:none}
+.hero{padding:68px 6% 54px;background:radial-gradient(circle at 88% 20%,#d9f4f0 0,transparent 26%),linear-gradient(120deg,#eef8ff,#f8fbff 60%,#eaf8ff);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;min-height:490px}
+.eyebrow{color:var(--green);font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(36px,4.4vw,58px);line-height:1.12;color:var(--navy);margin:13px 0 18px;letter-spacing:-1.5px}
+.hero p{font-size:17px;color:var(--muted);max-width:550px;margin:0 0 25px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{min-height:340px;position:relative;display:grid;place-items:center}
+.medical-art{width:min(100%,450px);height:340px;border-radius:35px;background:linear-gradient(145deg,#b9e9f4,#e4f8ff 55%,#d3f1e9);position:relative;overflow:hidden;box-shadow:0 24px 55px #2b72951c}
+.sun{position:absolute;width:210px;height:210px;border-radius:50%;background:#fff9;right:25px;top:18px}
+.hospital-building{position:absolute;bottom:0;left:13%;width:74%;height:69%;background:white;border-radius:16px 16px 0 0;box-shadow:0 12px 30px #1d5b7920}
+.building-top{height:36px;background:#1677d2;border-radius:14px 14px 0 0}
+.cross{position:absolute;top:42px;left:calc(50% - 23px);font-size:44px;color:#1677d2;font-weight:800}
+.windows{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:28px 24px}
+.windows span{height:35px;border-radius:6px;background:#d8f0fb;border:2px solid #c1e5f5}
+.door{width:48px;height:74px;position:absolute;bottom:0;left:calc(50% - 24px);border-radius:9px 9px 0 0;background:#a5dce9;border:4px solid #d8f0fb}
+.float-card{position:absolute;background:white;padding:13px 16px;border-radius:16px;box-shadow:0 12px 32px #143e5d20;font-size:13px;font-weight:700}
+.float-card span{display:block;color:var(--muted);font-size:11px;font-weight:500}
+.card-one{left:0;top:38px}.card-two{right:0;bottom:34px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 6%;margin-top:-1px}
+.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:19px;text-align:center}
+.stat strong{display:block;font-size:25px;color:var(--blue)}.stat span{font-size:12px;color:var(--muted)}
+section{padding:68px 6%}
+.section-head{text-align:center;max-width:650px;margin:0 auto 34px}
+.section-head h2{font-size:34px;line-height:1.2;color:var(--navy);margin:8px 0}
+.section-head p{color:var(--muted);margin:10px 0}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service,.doctor,.info-card{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;transition:.2s}
+.service:hover,.doctor:hover{transform:translateY(-4px);box-shadow:0 16px 32px #173c5c10}
+.icon{width:54px;height:54px;border-radius:16px;background:#e9f5ff;display:grid;place-items:center;font-size:26px;margin-bottom:16px}
+.service h3,.doctor h3{margin:0 0 7px;color:var(--navy);font-size:18px}
+.service p,.doctor p,.info-card p{color:var(--muted);font-size:14px;margin:0}
+.doctors{background:#eff8ff}
+.doctor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.avatar{height:145px;border-radius:13px;background:linear-gradient(135deg,#d6efff,#e0f6f0);display:grid;place-items:center;font-size:64px;margin-bottom:17px}
+.tag{display:inline-block;margin-top:12px;color:#087d74;background:#e4f8f4;border-radius:20px;padding:5px 10px;font-size:11px;font-weight:700}
+.appointment{background:linear-gradient(135deg,#10335b,#155b91);color:white}
+.appointment-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}
+.appointment h2{font-size:36px;line-height:1.2;margin:10px 0 15px}
+.appointment .lead{color:#d0e6f7}
+.benefit{display:flex;gap:12px;margin:20px 0;color:#e6f5ff}
+.tick{color:#61e0c0;font-size:20px}
+.form-card{background:white;color:var(--ink);border-radius:22px;padding:28px;box-shadow:0 20px 50px #00162e40}
+.form-card h3{margin:0 0 5px;color:var(--navy);font-size:23px}
+.form-card>p{margin:0 0 22px;color:var(--muted);font-size:13px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:12px;font-weight:700;color:#41566c}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid #d8e4ef;border-radius:10px;font:inherit;font-size:14px;background:#fbfdff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid #9ed3ff;border-color:var(--blue)}
+textarea{resize:vertical;min-height:82px}
+.form-card .btn{width:100%;margin-top:18px}
+#formMessage{margin-top:12px;font-size:13px;color:#087d74}
+.notice{font-size:11px;color:#6e8092;margin-top:10px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info-card{display:flex;gap:15px;align-items:flex-start}
+.info-card .icon{flex-shrink:0;margin:0}
+footer{background:#0b2440;color:#d1e2f1;padding:35px 6% 20px}
+.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer .brand{color:white}footer p{font-size:13px;color:#a9c1d6;max-width:440px}
+.footer-bottom{border-top:1px solid #29435c;margin-top:25px;padding-top:17px;font-size:12px;color:#a9c1d6;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:900px){nav{gap:12px}.hero{grid-template-columns:1fr;padding-top:48px}.hero-visual{min-height:300px}.services,.doctor-grid{grid-template-columns:repeat(2,1fr)}.appointment-wrap{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:1fr}}
+@media(max-width:580px){header{align-items:flex-start;flex-direction:column}.hero{padding:42px 5%}.hero-visual{min-height:260px}.medical-art{height:260px}.float-card{padding:9px 11px}.services,.doctor-grid{grid-template-columns:1fr}.stats{padding:0 5%}.stat{padding:14px 8px}section{padding:48px 5%}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card{padding:20px}.section-head h2{font-size:29px}.topbar{padding:9px 5%}}
+
+/* Appointment submission popup */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(10,30,55,.68);backdrop-filter:blur(5px);z-index:9999;align-items:center;justify-content:center;padding:20px}
+.popup-overlay.show{display:flex}
+.popup-box{background:#fff;width:100%;max-width:470px;padding:34px 28px 28px;border-radius:22px;text-align:center;position:relative;box-shadow:0 25px 70px #00162e55;animation:popupShow .3s ease-out}
+@keyframes popupShow{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.popup-close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:29px;color:#718096;cursor:pointer}
+.popup-check{width:72px;height:72px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:#dcfce7;color:#159567;font-size:43px;font-weight:800}
+.popup-box h2{font-size:24px;color:#12335b;line-height:1.25;margin:0 0 12px}
+.popup-box p{color:#60748a;line-height:1.65;margin:0 0 22px}
+.popup-download{width:100%;border:0;border-radius:11px;padding:14px 16px;background:linear-gradient(120deg,#1677d2,#5145cd);color:white;font-weight:700;font-size:15px;cursor:pointer}
+.popup-download:hover{filter:brightness(.95);transform:translateY(-1px)}
+.popup-later{margin-top:10px;border:1px solid #dbe6f0;background:white;color:#315780;border-radius:10px;padding:11px 16px;width:100%;cursor:pointer}
+@media(max-width:480px){.popup-box{padding:30px 20px 22px}.popup-box h2{font-size:21px}}
+
+</style>
+</head>
+<body>
+<div class="topbar"><span>✚  Compassionate care. Better health.</span><span>☎  Emergency: Call your local emergency service &nbsp; | &nbsp; Open 24/7</span></div>
+<header>
+  <a class="brand" href="#home"><span class="logo">✚</span><span>City Care <span style="color:#1677d2">Hospital</span></span></a>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#doctors">Doctors</a><a href="#emergency">Emergency</a><a href="#pharmacy">Pharmacy</a>
+    <a class="btn" href="#appointment">Book Appointment</a>
+  </nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">Your health, our priority</div>
+    <h1>Care that puts<br>you <span style="color:#1677d2">first.</span></h1>
+    <p>Welcome to City Care Hospital. Find the care you need in a friendly, supportive environment, with patient well-being at the heart of everything we do.</p>
+    <div class="actions"><a class="btn" href="#appointment">♡ &nbsp; Book an Appointment</a><a class="btn btn-outline" href="#services">Explore Our Services &nbsp; →</a></div>
+  </div>
+  <div class="hero-visual" aria-label="Illustration of a hospital building">
+    <div class="medical-art"><div class="sun"></div><div class="hospital-building"><div class="building-top"></div><div class="cross">✚</div><div class="windows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="door"></div></div></div>
+    <div class="float-card card-one">✚ Patient-first care<span>Support at every step</span></div>
+    <div class="float-card card-two">♡ Your well-being matters<span>Care with compassion</span></div>
+  </div>
+</section>
+<div class="stats">
+  <div class="stat"><strong>24/7</strong><span>Emergency Support</span></div><div class="stat"><strong>4+</strong><span>Care Specialties</span></div><div class="stat"><strong>1st</strong><span>Patient Comes First</span></div><div class="stat"><strong>♡</strong><span>Care With Compassion</span></div>
+</div>
+<section id="services">
+  <div class="section-head"><div class="eyebrow">What we offer</div><h2>Healthcare for every step</h2><p>Explore our key services and find the right starting point for your healthcare needs.</p></div>
+  <div class="services">
+    <article class="service"><div class="icon">✚</div><h3>General Medicine</h3><p>General consultations, health concerns, and guidance for your next steps in care.</p></article>
+    <article class="service" id="emergency"><div class="icon">♡</div><h3>Emergency Care</h3><p>For urgent or life-threatening situations, contact your local emergency service immediately.</p></article>
+    <article class="service"><div class="icon">⚕</div><h3>Specialist Doctors</h3><p>Explore specialist care options and request an appointment with our care team.</p></article>
+    <article class="service" id="pharmacy"><div class="icon">＋</div><h3>Pharmacy</h3><p>Ask your healthcare professional about prescribed medicines and safe medication use.</p></article>
+  </div>
+</section>
+<section class="doctors" id="doctors">
+  <div class="section-head"><div class="eyebrow">Meet the care team</div><h2>Doctors who care</h2><p>Sample doctor profiles for this project. Replace these with verified hospital staff details before publishing.</p></div>
+  <div class="doctor-grid">
+    <article class="doctor"><div class="avatar">👨‍⚕️</div><h3>Dr. John</h3><p>Cardiology</p><span class="tag">Heart health</span></article>
+    <article class="doctor"><div class="avatar">👨‍⚕️</div><h3>Dr. David</h3><p>Orthopaedics</p><span class="tag">Bone & joint care</span></article>
+    <article class="doctor"><div class="avatar">👩‍⚕️</div><h3>Dr. Priya</h3><p>Neurology</p><span class="tag">Nervous system</span></article>
+    <article class="doctor"><div class="avatar">👨‍⚕️</div><h3>Dr. Rahul</h3><p>General Physician</p><span class="tag">General consultation</span></article>
+  </div>
+</section>
+<section class="appointment" id="appointment">
+  <div class="appointment-wrap">
+    <div><div class="eyebrow" style="color:#6ce2c5">Take the next step</div><h2>Book your hospital appointment</h2><p class="lead">Share your details and reason for visiting. Our sample form demonstrates the patient appointment workflow.</p>
+      <div class="benefit"><span class="tick">✓</span><span>Simple patient registration form</span></div><div class="benefit"><span class="tick">✓</span><span>Patient details organised in one place</span></div><div class="benefit"><span class="tick">✓</span><span>Designed for an HTML + JSP + SQL Server project</span></div>
+    </div>
+    <div class="form-card">
+      <h3>Appointment Request</h3><p>Fields marked * are required.</p>
+      <form id="appointmentForm">
+        <div class="form-grid">
+          <div class="field"><label for="patientName">Patient Full Name *</label><input id="patientName" name="patientName" autocomplete="name" placeholder="Enter full name" required></div>
+          <div class="field"><label for="age">Age (years) *</label><input id="age" name="age" type="number" min="0" max="120" placeholder="Enter age" required></div>
+          <div class="field"><label for="gender">Gender *</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></div>
+          <div class="field"><label for="phone">Mobile Number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" pattern="[0-9+() -]{7,20}" placeholder="Enter contact number" required></div>
+          <div class="field"><label for="email">Email Address (optional)</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="visitType">Type of Visit *</label><select id="visitType" name="visitType" required><option value="">Select visit type</option><option>New Patient</option><option>Follow-up Visit</option></select></div>
+          <div class="field"><label for="department">Department / Specialty *</label><select id="department" name="department" required><option value="">Choose department</option><option>General Medicine</option><option>Cardiology</option><option>Orthopaedics</option><option>Neurology</option><option>Paediatrics</option><option>Dermatology</option><option>Gynaecology</option><option>Other / Not Sure</option></select></div>
+          <div class="field"><label for="doctor">Preferred Doctor</label><select id="doctor" name="doctor"><option value="">Any available doctor</option><option>Dr. John — Cardiology</option><option>Dr. David — Orthopaedics</option><option>Dr. Priya — Neurology</option><option>Dr. Rahul — General Medicine</option></select></div>
+          <div class="field"><label for="appointmentDate">Preferred Date *</label><input id="appointmentDate" name="appointmentDate" type="date" required></div>
+          <div class="field"><label for="timeSlot">Preferred Time Slot *</label><select id="timeSlot" name="timeSlot" required><option value="">Choose a time</option><option>09:00 AM – 10:00 AM</option><option>10:00 AM – 11:00 AM</option><option>11:00 AM – 12:00 PM</option><option>12:00 PM – 01:00 PM</option><option>02:00 PM – 03:00 PM</option><option>03:00 PM – 04:00 PM</option><option>04:00 PM – 05:00 PM</option></select></div>
+          <div class="field full"><label for="location">Address / City *</label><input id="location" name="location" autocomplete="street-address" placeholder="Enter address or city" required></div>
+          <div class="field full"><label for="reason">Reason for Visit / Symptoms (optional)</label><textarea id="reason" name="reason" placeholder="Briefly describe the reason for your visit"></textarea></div>
+          <div class="field full"><label style="display:flex;align-items:flex-start;gap:9px;font-weight:500"><input type="checkbox" id="consent" name="consent" required style="width:auto;margin-top:4px;flex-shrink:0"> I agree that City Care Hospital may contact me about this appointment request and use these details for appointment coordination. *</label></div>
+        </div>
+        <button class="btn" type="submit">Request Appointment →</button>
+        <div id="formMessage" role="status" aria-live="polite"></div>
+        <div class="notice">This is an appointment request, not a confirmed booking. Date and time availability must be checked by the hospital. Demo only: this HTML page does not save patient details. Connect it to your JSP and SQL Server backend before collecting real patient information. Do not enter emergency symptoms here; seek urgent medical help instead.</div>
+      </form>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="section-head"><div class="eyebrow">We're here to help</div><h2>Contact & visit information</h2><p>Update these sample details with the hospital's verified contact information.</p></div>
+  <div class="info-grid">
+    <div class="info-card"><div class="icon">⌖</div><div><h3>Location</h3><p>City Care Hospital<br>Chennai, Tamil Nadu, India</p></div></div>
+    <div class="info-card"><div class="icon">☎</div><div><h3>Contact</h3><p>Phone: Add official hospital number<br>Email: Add official email address</p></div></div>
+    <div class="info-card"><div class="icon">◷</div><div><h3>Opening Hours</h3><p>Emergency services: verify locally<br>Clinic timings: contact the hospital</p></div></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="footer-top"><div><a class="brand" href="#home"><span class="logo">✚</span><span>City Care Hospital</span></a><p>A student project prototype demonstrating a hospital information website and appointment request interface.</p></div><div><strong>Quick links</strong><p><a href="#services">Services</a> &nbsp;·&nbsp; <a href="#doctors">Doctors</a> &nbsp;·&nbsp; <a href="#appointment">Appointments</a> &nbsp;·&nbsp; <a href="#contact">Contact</a></p></div></div>
+  <div class="footer-bottom"><span>© 2026 City Care Hospital — Project Prototype</span><span>Care • Trust • Well-being</span></div>
+</footer>
+
+<div class="popup-overlay" id="successPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-box">
+    <button class="popup-close" type="button" aria-label="Close popup" onclick="closePopup()">&times;</button>
+    <div class="popup-check">✓</div>
+    <h2 id="popupTitle">Appointment Request Submitted!</h2>
+    <p>Your request has been prepared successfully. Would you like to download your appointment details for your reference?</p>
+    <button class="popup-download" type="button" onclick="downloadAppointment()">⬇ Download Appointment Details</button>
+    <button class="popup-later" type="button" onclick="closePopup()">Maybe Later</button>
+    <div class="notice">This demo does not confirm a booking or save details to a hospital database.</div>
+  </div>
+</div>
+
+<script>
+const appointmentDateInput=document.getElementById('appointmentDate');
+const localToday=new Date();
+const localDateString=localToday.getFullYear()+'-'+String(localToday.getMonth()+1).padStart(2,'0')+'-'+String(localToday.getDate()).padStart(2,'0');
+appointmentDateInput.min=localDateString;
+
+let submittedAppointment = null;
+
+document.getElementById('appointmentForm').addEventListener('submit',function(event){
+  event.preventDefault();
+  if(!this.reportValidity()) return;
+  const formData = new FormData(this);
+  submittedAppointment = {
+    'Hospital': 'City Care Hospital',
+    'Patient Name': formData.get('patientName'),
+    'Age': formData.get('age'),
+    'Gender': formData.get('gender'),
+    'Mobile Number': formData.get('phone'),
+    'Email': formData.get('email') || 'Not provided',
+    'Visit Type': formData.get('visitType'),
+    'Department': formData.get('department'),
+    'Preferred Doctor': formData.get('doctor') || 'Any available doctor',
+    'Preferred Date': formData.get('appointmentDate'),
+    'Preferred Time': formData.get('timeSlot'),
+    'Address / City': formData.get('location'),
+    'Reason for Visit': formData.get('reason') || 'Not provided',
+    'Status': 'Request only — awaiting hospital confirmation',
+    'Submitted On': new Date().toLocaleString()
+  };
+  document.getElementById('successPopup').classList.add('show');
+});
+
+function closePopup(){
+  document.getElementById('successPopup').classList.remove('show');
+}
+
+function downloadAppointment(){
+  if(!submittedAppointment) return;
+  const lines = [
+    'CITY CARE HOSPITAL',
+    'APPOINTMENT REQUEST DETAILS',
+    '================================',
+    ...Object.entries(submittedAppointment).map(([key,value]) => key + ': ' + value),
+    '',
+    'Important: This is an appointment request, not a confirmed booking.',
+    'The hospital must verify availability and contact the patient.'
+  ];
+  const blob = new Blob([lines.join('\r\n')], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'City_Care_Appointment_Details.txt';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  closePopup();
+}
+
+document.getElementById('successPopup').addEventListener('click',function(event){
+  if(event.target === this) closePopup();
+});
+document.addEventListener('keydown',function(event){
+  if(event.key === 'Escape') closePopup();
+});
+</script>
+</body>
+</html>
